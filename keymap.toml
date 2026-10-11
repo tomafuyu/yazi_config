@@ -1,0 +1,35 @@
+[mgr]
+prepend_keymap = [
+	{ on = "A", run = "create --dir", desc = "create directory" },
+	{ on = "i", run = "spot", desc = "show info" },
+	{ on = "H", run = "tab_switch --relative -1", desc = "prev tab" },
+	{ on = "L", run = "tab_switch --relative +1", desc = "next tab" },
+	{ on = [ "c", "s" ], run = "copy path --separator=unix", desc = "copy path (slash)" },
+	{ on = [ "g", "h" ], run = "back", desc = "back" },
+	{ on = [ "g", "l" ], run = "forward", desc = "forward" },
+	{ on = [ "m", "a" ], run = "linemode size_and_mtime", desc = "Linemode: size mtime" },
+	{ on = [ "r", "a" ], run = "rename --empty=all", desc = "rename all" },
+	{ on = [ "r", "r" ], run = "rename --cursor=before_ext", desc = "rename" },
+	{ on = [ "r", "s" ], run = "rename --empty=stem --cursor=start", desc = "rename stem" },
+
+	{ on = "~" , run = "cd ~", desc = "~" },
+	{ on = [ "g", "p" ], run = "cd ~/Pictures", desc = "~/Pictures" },
+	{ on = [ "g", "m" ], run = "cd D:/music", desc = "D:/music" },
+	{ on = [ "g", "u" ], run = "cd ~/Univ", desc = "~/Univ/lab" },
+
+	{ on = [ "t", "d" ], run = "tab_create ~/Downloads", desc = "tab ~/Downloads" },
+	{ on = [ "t", "m" ], run = "tab_create D:/music", desc = "tab D:/music" },
+	{ on = [ "t", "p" ], run = "tab_create ~/Pictures", desc = "tab ~/Pictures" },
+	{ on = [ "t", "u" ], run = "tab_create ~/Univ/lab", desc = "tab ~/Univ/lab" },
+	{ on = "T", run = "close", desc = "close tab" },
+
+	{ on = "f", run = "plugin jump-to-char", desc = "Jump to char" },
+
+	{ on  = "K", run = "plugin parent-arrow -1" },
+	{ on  = "J", run = "plugin parent-arrow 1" },
+
+	# doesn't work
+	{ on = "+", run = "plugin zoom 1", desc = "Zoom in" },
+	{ on = "-", run = "plugin zoom -1", desc = "Zoom out" },
+]
+
