@@ -55,12 +55,11 @@ function Tabs:redraw()
 	return { tabs, path }
 end
 
-
 local function rounded(self, style)
     return ui.Line({
-        ui.Span(th.counticon.sep_left):fg(style:bg()),
+        ui.Span(th.count.sep_left):fg(style:bg()),
         ui.Span(self):style(style),
-        ui.Span(th.counticon.sep_right):fg(style:bg()),
+        ui.Span(th.count.sep_right):fg(style:bg()),
         ui.Span(" "),
     })
 end
@@ -72,9 +71,9 @@ Status:children_add(function()
     end
 
     if cx.yanked.is_cut then
-        return rounded(th.counticon.cut .. count, th.mgr.count_cut)
+        return rounded(th.count.cut .. count, th.mgr.count_cut)
     else
-        return rounded(th.counticon.copied .. count, th.mgr.count_copied)
+        return rounded(th.count.copied .. count, th.mgr.count_copied)
     end
 end, 501, Status.RIGHT)
 
@@ -83,7 +82,7 @@ Status:children_add(function()
     if count < 1 then
         return ""
     end
-    return rounded(th.counticon.selected .. count, th.mgr.count_selected)
+    return rounded(th.count.selected .. count, th.mgr.count_selected)
 end, 500, Status.RIGHT)
 
 function Linemode:size_and_mtime()
@@ -99,4 +98,7 @@ end
 
 require("full-border"):setup()
 require("mime-ext"):setup()
+require("git"):setup{
+	order = 1500,
+}
 

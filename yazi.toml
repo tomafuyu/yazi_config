@@ -1,11 +1,21 @@
+#:schema https://yazi-rs.github.io/schemas/yazi.json
+
 [mgr]
 linemode = "size_and_mtime"
 # show_hidden = true
+
+[preview]
+max_width = 4000
+max_height = 4000
 
 [plugin]
 prepend_previewers = [
 	{ mime = "*executable*", run = "exiftool" },
 	{ mime = "audio/*",   run = "exifaudio" },
+]
+prepend_fetchers = [
+	{ url = "*",  run = "git", group = "git" },
+	{ url = "*/", run = "git", group = "git" },
 ]
 
 [opener]

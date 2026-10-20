@@ -1,3 +1,5 @@
+#:schema https://yazi-rs.github.io/schemas/keymap.json
+
 [mgr]
 prepend_keymap = [ # BeEFuU
 	{ on = "A", run = "create --dir", desc = "create directory" },
@@ -12,8 +14,8 @@ prepend_keymap = [ # BeEFuU
 	{ on = [ "g", "l" ], run = "forward", desc = "forward" },
 	{ on = [ "m", "a" ], run = "linemode size_and_mtime", desc = "Linemode: size mtime" },
 	{ on = [ "r", "a" ], run = "rename --empty=all", desc = "rename all" },
+	{ on = [ "r", "b" ], run = "rename --empty=stem --cursor=start", desc = "rename base" },
 	{ on = [ "r", "r" ], run = "rename --cursor=before_ext", desc = "rename" },
-	{ on = [ "r", "s" ], run = "rename --empty=stem --cursor=start", desc = "rename stem" },
 
 	{ on = [ "b", "c" ], run = "cd C:/", desc = "C:/", for = "windows" },
 	{ on = [ "b", "d" ], run = "cd D:/", desc = "D:/", for = "windows" },
@@ -24,18 +26,20 @@ prepend_keymap = [ # BeEFuU
 	{ on = [ "g", "a" ], run = "cd ~/AppData", desc = "~/AppData", for = "windows" },
 	{ on = [ "g", "b" ], run = "cd ~/Univ/lab", desc = "~/Univ/lab" },
 	{ on = [ "g", "d" ], run = "cd ~/Downloads", desc = "~/Downloads" },
+	{ on = [ "g", "D" ], run = "cd ~/Documents", desc = "~/Documents" },
 	{ on = [ "g", "m" ], run = "cd D:/music", desc = "D:/music", for = "windows" },
 	{ on = [ "g", "p" ], run = "cd ~/Pictures", desc = "~/Pictures" },
-	{ on = [ "g", "u" ], run = "cd ~/Documents", desc = "~/Documents" },
+	{ on = [ "g", "u" ], run = "cd F:/マイドライブ/univ", desc = "F://univ", for = "windows" },
 	{ on = [ "g", "v" ], run = "cd ~/Videos", desc = "~/Videos" },
 
 	{ on = [ "t", "~" ], run = "tab_create ~", desc = "tab ~" },
 	{ on = [ "t", "a" ], run = "tab_create ~/AppData", desc = "tab ~/AppData", for = "windows" },
 	{ on = [ "t", "b" ], run = "tab_create ~/Univ/lab", desc = "tab ~/Univ/lab" },
 	{ on = [ "t", "d" ], run = "tab_create ~/Downloads", desc = "tab ~/Downloads" },
+	{ on = [ "t", "D" ], run = "tab_create ~/Documents", desc = "tab ~/Documents" },
 	{ on = [ "t", "m" ], run = "tab_create D:/music", desc = "tab D:/music", for = "windows" },
 	{ on = [ "t", "p" ], run = "tab_create ~/Pictures", desc = "tab ~/Pictures" },
-	{ on = [ "t", "u" ], run = "tab_create ~/Documents", desc = "tab ~/Documents" },
+	{ on = [ "t", "u" ], run = "tab_create F:/マイドライブ/univ", desc = "tab F://univ", for = "windows" },
 	{ on = [ "t", "v" ], run = "tab_create ~/Videos", desc = "tab ~/Videos" },
 
 	{ on = "f", run = "plugin jump-to-char", desc = "Jump to char" },

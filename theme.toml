@@ -1,8 +1,19 @@
+#:schema https://yazi-rs.github.io/schemas/theme.json
+
 # Base: Bluloco dark flavour for Yazi
-# schema: https://yazi-rs.github.io/schemas/theme.json
 #  
 
-[counticon]
+# black : #001122
+# white : #ddeeff
+# main  : #11aaff
+# delim : #7788dd
+# image : #33ff55
+# video : #00aa00
+# audio : #88ddff
+# red   : #ff6688
+# : #aabbcc
+
+[count]
 copied = "󰆏 "
 cut = "󰆐 "
 marked = ""
@@ -11,18 +22,18 @@ sep_left = ""
 sep_right = ""
 
 # [app]
-# overall = { bg = "#222222" }
+# overall = { bg = "#001122" }
 
 [mgr]
-cwd = { fg = "#22ccff" }
+cwd = { fg = "#11aaff" }
 symlink_target = { italic = true }
-marker_copied = { fg = "#F9C859", bg = "#F9C859" }
-marker_cut = { fg = "#ee3355", bg = "#ee3355" }
+marker_copied = { fg = "#33ff55", bg = "#33ff55" }
+marker_cut = { fg = "#ff6688", bg = "#ff6688" }
 marker_marked = { fg = "#7788dd", bg = "#7788dd" }
 marker_selected = { fg = "#22ccff", bg = "#22ccff" }
-count_copied = { fg = "#222222", bg = "#F9C859" }
-count_cut = { fg = "#222222", bg = "#ee3355" }
-count_selected = { fg = "#222222", bg = "#22ccff" }
+count_copied = { fg = "#001122", bg = "#33ff55" }
+count_cut = { fg = "#001122", bg = "#ff6688" }
+count_selected = { fg = "#001122", bg = "#22ccff" }
 border_symbol = "│"
 border_style = { fg = "#7788dd" }
 
@@ -34,7 +45,7 @@ italic = true
 underline = true
 
 [mgr.find_position]
-fg = "#ABB2BF"
+fg = "#aabbcc"
 bg = "reset"
 bold = true
 italic = true
@@ -46,22 +57,21 @@ preview = { underline = true }
 padding = { open = "█", close = "█" }
 
 [tabs]
-active = { fg = "#222222", bg = "#11aaff" }
-inactive = { fg = "#bbbbbb", bg = "#222222" }
+active = { fg = "#001122", bg = "#11aaff" }
+inactive = { fg = "#aabbcc", bg = "#001122" }
 sep_inner = { open = "", close = "" }
 sep_outer = { open = "", close = "" }
 
 [mode]
-normal_main = { fg = "#222222", bg = "#11aaff" }
-normal_alt = { fg = "#ddeeff", bg = "#222222" }
-select_main = { fg = "#222222", bg = "#9F7EFE" }
-select_alt = { fg = "#9F7EFE", bg = "#222222" }
-unset_main = { fg = "#222222", bg = "#ee3355" }
-unset_alt = { fg = "#ee3355", bg = "#222222" }
-
+normal_main = { fg = "#001122", bg = "#11aaff" }
+normal_alt = { fg = "#ddeeff", bg = "#001122" }
+select_main = { fg = "#001122", bg = "#9F7EFE" }
+select_alt = { fg = "#9F7EFE", bg = "#001122" }
+unset_main = { fg = "#001122", bg = "#ff6688" }
+unset_alt = { fg = "#ff6688", bg = "#001122" }
 
 [status]
-overall = { fg = "#bbbbbb" }
+overall = { fg = "#aabbcc" }
 sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 perm_sep = { fg = "#5F697C" }
@@ -69,41 +79,38 @@ perm_type = { fg = "#11aaff" }
 perm_read = { fg = "#9F7EFE" }
 perm_write = { fg = "#FC2E51" }
 perm_exec = { fg = "#3FC56B" }
-progress_label = { fg = "#282C34", bold = true }
+progress_label = { fg = "#001122", bold = true }
 progress_normal = { fg = "#9F7EFE", bg = "#636D83" }
-progress_error = { fg = "#FF2E3F", bg = "#FDCFD1" }
-
+progress_error = { fg = "#ff6688", bg = "#FDCFD1" }
 
 [which]
 border = { fg = "#7788dd" }
 cols = 3
-mask = { bg = "#21232C" }
+mask = { bg = "#001122" }
 cand = { fg = "#ff9966" }
 desc = { fg = "#ddeeff" }
 separator = " ➜ "
 separator_style = { fg = "#7788dd" }
 
-
 [confirm]
 border = { fg = "#7788dd" }
-title = { fg = "#7A82DA" }
+title = { fg = "#ddeeff" }
 body = {}
 list = {}
-btn_yes = { fg = "#3FC56B" }
-btn_no = { fg = "#FC2E51" }
+btn_yes = { fg = "#33ff55" }
+btn_no = { fg = "#ff6688" }
 btn_labels = ["Yes", "No"]
-
 
 [spot]
 border = { fg = "#7788dd" }
-title = { fg = "#7A82DA" }
+title = { fg = "#ddeeff" }
 tbl_col = { fg = "#3691FF" }
 tbl_cell = { bg = "#274670" }
 
 [notify]
 title_info = { fg = "#3691FF" }
 title_warn = { fg = "#DA7A43" }
-title_error = { fg = "#FF2E3F" }
+title_error = { fg = "#ff6688" }
 icon_info = ""
 icon_warn = ""
 icon_error = ""
@@ -115,7 +122,7 @@ inactive = {}
 
 [input]
 border = { fg = "#7788dd" }
-title = { fg = "#7A82DA" }
+title = { fg = "#ddeeff" }
 value = {}
 selected = { reversed = true }
 
@@ -129,27 +136,27 @@ icon_command = ""
 
 [tasks]
 border = { fg = "#7788dd" }
-title = { fg = "#7A82DA" }
+title = { fg = "#ddeeff" }
 hovered = { bg = "#274670", bold = true }
 
 [help]
 border = { fg = "#7788dd" }
 chord = { fg = "#FF936A" }
 action = { fg = "#11aaff" }
-hovered = { bg = "#274670", bold = true }
+hovered = { bg = "#001122", bold = true }
 
 [filetype]
 rules = [
 	{ mime = "**/image/*", fg = "#33ff55" },
-	{ mime = "**/video/*", fg = "#9F7EFE" },
-	{ mime = "**/audio/*", fg = "#aaeeff" },
+	{ mime = "**/video/*", fg = "#00aa00" },
+	{ mime = "**/audio/*", fg = "#88ddff" },
 	{ mime = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#FF9966" },
 	{ mime = "**/application/{pdf,doc,rtf}", fg = "#50ACAE" },
 	{ mime = "vfs/{absent,stale}", fg = "#636D83" },
-	{ url = "*", is = "orphan", fg = "#282C34", bg = "#FF2E3F" },
+	{ url = "*", is = "orphan", fg = "#001122", bg = "#ff6688" },
 	{ url = "*", is = "exec", fg = "#3FC56B" },
-	{ url = "*", is = "dummy", fg = "#282C34", bg = "#FF2E3F" },
-	{ url = "*/", is = "dummy", fg = "#282C34", bg = "#FF2E3F" },
+	{ url = "*", is = "dummy", fg = "#001122", bg = "#ff6688" },
+	{ url = "*/", is = "dummy", fg = "#001122", bg = "#ff6688" },
 	{ url = "*", fg = "#ddeeff" },
 	{ url = "*/", fg = "#11aaff" },
 ]
@@ -169,19 +176,23 @@ prepend_dirs = [
 	{ name = "Downloads", text = "", fg = "#11aaff" },
 	{ name = "Documents", text = "", fg = "#11aaff" },
 	{ name = "Library", text = "", fg = "#11aaff" },
-	{ name = "Movies", text = "", fg = "#11aaff" },
-	{ name = "Music", text = "", fg = "#11aaff" },
-	{ name = "Pictures", text = "", fg = "#11aaff" },
+	{ name = "Movies", text = "", fg = "#00aa00" },
+	{ name = "Music", text = "", fg = "#88ddff" },
+	{ name = "Pictures", text = "", fg = "#33ff55" },
 	{ name = "Public", text = "", fg = "#11aaff" },
-	{ name = "Videos", text = "", fg = "#11aaff" },
+	{ name = "Videos", text = "", fg = "#00aa00" },
 ]
 
 [git]
+unknown_sign  = " "
+unstaged_sign = "M"
+deleted_sign  = "D"
+clean_sign    = "✔"
 unstaged = { fg = "#11aaff" }
 staged = { fg = "#11aaff" }
 added = { fg = "#3FC56B" }
 untracked = { fg = "#636D83" }
 ignored = { fg = "#636D83" }
-deleted = { fg = "#FF6480" }
+deleted = { fg = "#ff6688" }
 updated = { fg = "#FF78F8" }
 
