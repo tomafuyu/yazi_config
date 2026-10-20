@@ -1,4 +1,26 @@
 [mgr]
 linemode = "size_and_mtime"
-show_hidden = true
+# show_hidden = true
+
+[plugin]
+prepend_previewers = [
+	{ mime = "*executable*", run = "exiftool" },
+	{ mime = "audio/*",   run = "exifaudio" },
+]
+
+[opener]
+edit = [
+	{ run = 'nvim %s', block = true, desc = "Neovim" },
+	{ run = 'wt -w 0 nt nvim %s', orphan = true, desc = "Neovim (nt)", for = "windows" },
+	# { run = 'nvim %d', block = true, desc = "Neovim (pwd)" },
+	# { run = 'wt -w 0 nt nvim %d', orphan = true, desc = "Neovim (nt pwd)", for = "windows" },
+	{ run = 'code %s', orphan = true, desc = "VS Code" },
+	{ run = 'code %d', orphan = true, desc = "VS Code (pwd)" },
+]
+
+[open]
+prepend_rules = [
+	{ mime = "/*", use = [ "edit", "open", "reveal" ] },
+	{ mime = "text/*", use = [ "edit", "open", "reveal" ] },
+]
 

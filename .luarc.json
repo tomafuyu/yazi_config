@@ -1,0 +1,17 @@
+{
+	"$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+	"runtime.version": "Lua 5.5",
+	"workspace.library": [
+		"./plugins/types.yazi"
+	],
+	"diagnostics.globals": [
+		"Header",
+		"Linemode",
+		"Manager",
+		"Root",
+		"Status",
+		"Tab",
+		"Tabs"
+	]
+}
+

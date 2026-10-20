@@ -1,10 +1,13 @@
 [mgr]
-prepend_keymap = [
+prepend_keymap = [ # BeEFuU
 	{ on = "A", run = "create --dir", desc = "create directory" },
 	{ on = "i", run = "spot", desc = "show info" },
 	{ on = "H", run = "tab_switch --relative -1", desc = "prev tab" },
 	{ on = "L", run = "tab_switch --relative +1", desc = "next tab" },
-	{ on = [ "c", "s" ], run = "copy path --separator=unix", desc = "copy path (slash)" },
+	{ on = "T", run = "close", desc = "close tab" },
+
+	{ on = [ "c", "b" ], run = "copy name_without_ext", desc = "copy base" },
+	{ on = [ "c", "s" ], run = "copy path --separator=unix", desc = "copy path (slash)", for = "windows" },
 	{ on = [ "g", "h" ], run = "back", desc = "back" },
 	{ on = [ "g", "l" ], run = "forward", desc = "forward" },
 	{ on = [ "m", "a" ], run = "linemode size_and_mtime", desc = "Linemode: size mtime" },
@@ -12,21 +15,33 @@ prepend_keymap = [
 	{ on = [ "r", "r" ], run = "rename --cursor=before_ext", desc = "rename" },
 	{ on = [ "r", "s" ], run = "rename --empty=stem --cursor=start", desc = "rename stem" },
 
-	{ on = "~" , run = "cd ~", desc = "~" },
-	{ on = [ "g", "p" ], run = "cd ~/Pictures", desc = "~/Pictures" },
-	{ on = [ "g", "m" ], run = "cd D:/music", desc = "D:/music" },
-	{ on = [ "g", "u" ], run = "cd ~/Univ", desc = "~/Univ/lab" },
+	{ on = [ "b", "c" ], run = "cd C:/", desc = "C:/", for = "windows" },
+	{ on = [ "b", "d" ], run = "cd D:/", desc = "D:/", for = "windows" },
+	{ on = [ "b", "f" ], run = "cd F:/マイドライブ", desc = "F:/マイドライブ", for = "windows" },
+	{ on = [ "b", "t" ], run = "cd T:/マイドライブ", desc = "T:/マイドライブ", for = "windows" },
 
+	{ on = "~" , run = "cd ~", desc = "~" },
+	{ on = [ "g", "a" ], run = "cd ~/AppData", desc = "~/AppData", for = "windows" },
+	{ on = [ "g", "b" ], run = "cd ~/Univ/lab", desc = "~/Univ/lab" },
+	{ on = [ "g", "d" ], run = "cd ~/Downloads", desc = "~/Downloads" },
+	{ on = [ "g", "m" ], run = "cd D:/music", desc = "D:/music", for = "windows" },
+	{ on = [ "g", "p" ], run = "cd ~/Pictures", desc = "~/Pictures" },
+	{ on = [ "g", "u" ], run = "cd ~/Documents", desc = "~/Documents" },
+	{ on = [ "g", "v" ], run = "cd ~/Videos", desc = "~/Videos" },
+
+	{ on = [ "t", "~" ], run = "tab_create ~", desc = "tab ~" },
+	{ on = [ "t", "a" ], run = "tab_create ~/AppData", desc = "tab ~/AppData", for = "windows" },
+	{ on = [ "t", "b" ], run = "tab_create ~/Univ/lab", desc = "tab ~/Univ/lab" },
 	{ on = [ "t", "d" ], run = "tab_create ~/Downloads", desc = "tab ~/Downloads" },
-	{ on = [ "t", "m" ], run = "tab_create D:/music", desc = "tab D:/music" },
+	{ on = [ "t", "m" ], run = "tab_create D:/music", desc = "tab D:/music", for = "windows" },
 	{ on = [ "t", "p" ], run = "tab_create ~/Pictures", desc = "tab ~/Pictures" },
-	{ on = [ "t", "u" ], run = "tab_create ~/Univ/lab", desc = "tab ~/Univ/lab" },
-	{ on = "T", run = "close", desc = "close tab" },
+	{ on = [ "t", "u" ], run = "tab_create ~/Documents", desc = "tab ~/Documents" },
+	{ on = [ "t", "v" ], run = "tab_create ~/Videos", desc = "tab ~/Videos" },
 
 	{ on = "f", run = "plugin jump-to-char", desc = "Jump to char" },
 
-	{ on  = "K", run = "plugin parent-arrow -1" },
-	{ on  = "J", run = "plugin parent-arrow 1" },
+	{ on  = "<C-k>", run = "plugin parent-arrow -1" },
+	{ on  = "<C-j>", run = "plugin parent-arrow 1" },
 
 	# doesn't work
 	{ on = "+", run = "plugin zoom 1", desc = "Zoom in" },
